@@ -5,44 +5,44 @@
     .module('app.form')
     .controller('FormController', FormController);
 
-  FormController.$inject = ['logger', '$localStorage', '$stateParams'];
+  FormController.$inject = ['logger', 'person', '$state', '$localStorage', 'filterFilter'];
   /* @ngInject */
-  function FormController(logger, $localStorage, $stateParams) {
+  function FormController(logger, person, $state, $localStorage, filterFilter) {
     var fvm = this;
     var list = $localStorage.contacts;
-    var contacts = [];
-
+    var result = '';
+    fvm.person = person;
     fvm.submit = submit;
     fvm.user = {};
 
-    function submit() {
-      logger.info('Activated Form View');
-      if (list) {
-        if (containsObject(list)) {
-          console.log('test');
-          populate();
-          //update
-          //push new object to local storage
-        } else {
-          contacts = list;
-          fvm.user.id = list.length + 1;
-          list.push(fvm.user);
-        }
+    activate();
+
+    function activate() {
+      logger.info('Form view Activated');
+      if (person) {
+        populate();
       }
-      //go to dashboard
     }
 
-    function containsObject(obj, list) {
-      console.log('in containsObject');
-
-    }
-
-    function upsertObj() {
-      console.log('in upserObj');
+    function submit() {
+      if (person) {
+        result = list.indexOf(person);
+        list[result] = fvm.user;
+      } else {
+        fvm.user.id = list.length + 1;
+        list.push(fvm.user);
+      }
+      logger.success('Success');
+      $state.go('dashboard');
     }
 
     function populate() {
-      console.log('in poulate');
+      fvm.user.id = person.id;
+      fvm.user.name = person.name;
+      fvm.user.phone = person.phone;
+      fvm.user.email = person.email;
+      fvm.user.birthday = person.birthday;
+      fvm.user.avatar = person.avatar;
     }
   }
 })();

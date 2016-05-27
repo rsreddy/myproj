@@ -15,10 +15,10 @@
 <div class="header high">
     <h1>Code coverage report for <span class="entity">app/blocks/router/router-helper.provider.js</span></h1>
     <h2>
-        Statements: <span class="metric">80.85% <small>(38 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">40% <small>(10 / 25)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">91.67% <small>(11 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">80.43% <small>(37 / 46)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">95.74% <small>(45 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">76% <small>(19 / 25)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(12 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">95.65% <small>(44 / 46)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">app/blocks/router/</a> &#187; router-helper.provider.js</div>
@@ -198,19 +198,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">31</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -225,10 +225,10 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-yes">31</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">18</span>
-<span class="cline-any cline-yes">18</span>
-<span class="cline-any cline-yes">18</span>
-<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">23</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -302,20 +302,20 @@
         // On routing error, go to the dashboard.
         // Provide an exit clause if it tries to do it twice.
         $rootScope.$on('$stateChangeError',
-<span class="fstat-no" title="function not covered" >          function(event, toState, toParams, fromState, fromParams, error) {</span>
-<span class="cstat-no" title="statement not covered" >            if (handlingStateChangeError) {</span>
+          function(event, toState, toParams, fromState, fromParams, error) {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (handlingStateChangeError) {
 <span class="cstat-no" title="statement not covered" >              return;</span>
             }
-<span class="cstat-no" title="statement not covered" >            stateCounts.errors++;</span>
-<span class="cstat-no" title="statement not covered" >            handlingStateChangeError = true;</span>
-<span class="cstat-no" title="statement not covered" >            var destination = (toState &amp;&amp;</span>
-              (toState.title || toState.name || toState.loadedTemplateUrl)) ||
-              'unknown target';
-<span class="cstat-no" title="statement not covered" >            var msg = 'Error routing to ' + destination + '. ' +</span>
+            stateCounts.errors++;
+            handlingStateChangeError = true;
+            var destination = (toState &amp;&amp;
+              (toState.title || <span class="branch-2 cbranch-no" title="branch not covered" >toState.name </span>|| <span class="branch-3 cbranch-no" title="branch not covered" >toState.loadedTemplateUrl)</span>) ||
+<span class="branch-4 cbranch-no" title="branch not covered" >              'unknown target';</span>
+            var msg = 'Error routing to ' + destination + '. ' +
               (error.data || '') + '. &lt;br/&gt;' + (error.statusText || '') +
               ': ' + (error.status || '');
-<span class="cstat-no" title="statement not covered" >            logger.warning(msg, [toState]);</span>
-<span class="cstat-no" title="statement not covered" >            $location.path('/');</span>
+            logger.warning(msg, [toState]);
+            $location.path('/');
           }
         );
       }
@@ -345,7 +345,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu May 26 2016 14:43:52 GMT-0500 (CDT)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 27 2016 03:04:01 GMT-0500 (CDT)</div>
 </div>
 <script src="../../../prettify.js"></script>
 <script>

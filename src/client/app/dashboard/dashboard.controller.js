@@ -24,11 +24,16 @@
     }
 
     function getPeople() {
-      return dataservice.getPeople().then(function(data) {
-        vm.people = data;
-        $localStorage.contacts = data;
+      if ($localStorage.contacts) {
+        vm.people = $localStorage.contacts;
         return vm.people;
-      });
+      } else {
+        return dataservice.getPeople().then(function(data) {
+          vm.people = data;
+          $localStorage.contacts = data;
+          return vm.people;
+        });
+      }
     }
   }
 })();

@@ -21,21 +21,27 @@
             <div class="widget-content text-center text-info">
               <form ng-submit="fvm.submit()" class="horizontal">
                 <div class="form-group form-group-lg">
+                  <input class="form-control" type="hidden" ng-model="fvm.user.id" >
                   <label class="col-sm-2 control-label" for="formGroupInputSmall">Name</label>
                   <div class="col-sm-10">
-                    <input class="form-control" type="text" ng-model="fvm.user.name">
+                    <input class="form-control" type="text" ng-model="fvm.user.name" placeholder="{{fvm.user.name}}">
                   </div>
                   <label class="col-sm-2 control-label" for="formGroupInputSmall">Phone</label>
                   <div class="col-sm-10">
-                    <input class="form-control" type="number" ng-model="fvm.user.phone">
+                    <input class="form-control" type="text" ng-model="fvm.user.phone" placeholder="{{fvm.user.phone}}">
                   </div>
                   <label class="col-sm-2 control-label" for="formGroupInputSmall">Email</label>
                   <div class="col-sm-10">
-                    <input class="form-control" type="email" ng-model="fvm.user.email">
+                    <input class="form-control" type="email" ng-model="fvm.user.email" placeholder="{{fvm.user.email}}">
                   </div>
                   <label class="col-sm-2 control-label" for="formGroupInputSmall">Birthday</label>
                   <div class="col-sm-10">
-                    <input class="form-control" type="date" ng-model="fvm.user.birthday">
+                    <input class="form-control" type="text" ng-model="fvm.user.birthday"
+                    placeholder="{{fvm.user.birthday}}">
+                  </div>
+                  <label class="col-sm-2 control-label" for="formGroupInputSmall">Upload Pic</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" type="file" ng-model="fvm.user.avatar">
                   </div>
                 </div>
                 <input type="submit" id="submit" value="Submit" class="btn btn-default" />

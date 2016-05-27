@@ -30,14 +30,14 @@
                 </thead>
                 <tbody>
                   <td>{{pvm.person.name}}</td>
-                  <td>{{pvm.person.phone}}</td>
+                  <td><a ng-href=tel:"{{pvm.person.phone}}"> {{pvm.person.phone}}</a></td>
                   <td>{{pvm.person.email}}</td>
                   <td>{{pvm.person.birthday}}</td>
                   <td>
                     <img ng-src="{{pvm.person.avatar}}" class="img-circle img-thumbnail" /> 
                   </td>
                   <td>
-                  <a ui-sref="form" >
+                  <a ui-sref="form({ id: pvm.person.id })" >
                     <button type="button" class="btn btn-info"> Edit </button>
                   </a>  
                   </td>
