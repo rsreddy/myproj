@@ -53,7 +53,7 @@ function getPeople() {
       avatar: 'http://lorempixel.com/300/300/people/6'
     },
     {
-      id: 8,
+      id: 7,
       name: 'Old Man Jenkins',
       phone: '(123) 456-7890',
       email: 'wiseman@hotmail.com',
@@ -61,7 +61,7 @@ function getPeople() {
       avatar: 'http://lorempixel.com/300/300/people/8'
     },
     {
-      id: 9,
+      id: 8,
       name: 'Becky',
       phone: '(123) 456-7890',
       email: 'whatsoverthere@myspace.com',

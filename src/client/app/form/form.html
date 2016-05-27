@@ -1,0 +1,54 @@
+<section id="form-view" class="mainbar">
+  <section class="matter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="today-datas">
+            <li class="blightblue">
+              <div class="pull-left"><i class="fa fa-plane"></i></div>
+              <div class="datas-text pull-right">
+                <span class="bold">My Angular PhoneBook</span>
+              </div>
+              <div class="clearfix"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="widget wviolet">
+            <div ht-widget-header title="Add/Edit" allow-collapse="true"></div>
+            <div class="widget-content text-center text-info">
+              <form ng-submit="fvm.submit()" class="horizontal">
+                <div class="form-group form-group-lg">
+                  <label class="col-sm-2 control-label" for="formGroupInputSmall">Name</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" type="text" ng-model="fvm.user.name">
+                  </div>
+                  <label class="col-sm-2 control-label" for="formGroupInputSmall">Phone</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" type="number" ng-model="fvm.user.phone">
+                  </div>
+                  <label class="col-sm-2 control-label" for="formGroupInputSmall">Email</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" type="email" ng-model="fvm.user.email">
+                  </div>
+                  <label class="col-sm-2 control-label" for="formGroupInputSmall">Birthday</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" type="date" ng-model="fvm.user.birthday">
+                  </div>
+                </div>
+                <input type="submit" id="submit" value="Submit" class="btn btn-default" />
+              </form>
+            </div>
+            <div class="widget-foot">
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+

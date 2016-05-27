@@ -1,4 +1,4 @@
-<section id="dashboard-view" class="mainbar">
+<section id="person-view" class="mainbar">
   <section class="matter">
     <div class="container">
       <div class="row">
@@ -23,37 +23,26 @@
                 <thead>
                   <tr>
                     <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Birthday</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr ng-repeat="p in vm.people">
-                    <td>
-                      <a ui-sref="person({ id: p.id })">
-                        <img ng-src="{{p.avatar}}" class="img-circle" />
-                      </a>
-                    </td>
-                    <td>{{p.name}}</td>
-                    <td>
-                      <a ui-sref="person({ id: p.id })" >
-                        <button type="button" class="btn btn-info"> View </button>
-                      </a>
-                    </td>
-                  </tr>
+                  <td>{{pvm.person.name}}</td>
+                  <td>{{pvm.person.phone}}</td>
+                  <td>{{pvm.person.email}}</td>
+                  <td>{{pvm.person.birthday}}</td>
+                  <td>
+                    <img ng-src="{{pvm.person.avatar}}" class="img-circle img-thumbnail" /> 
+                  </td>
+                  <td>
+                  <a ui-sref="form" >
+                    <button type="button" class="btn btn-info"> Edit </button>
+                  </a>  
+                  </td>
                 </tbody>
               </table>
-            </div>
-            <div class="widget-foot">
-              <div class="clearfix"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="widget wgreen">
-            <div ht-widget-header title="{{vm.addNew}}" allow-collapse="true"></div>
-            <div class="widget-content text-center text-info">
-              <a ui-sref="form"> 
-                <img ng-src="images/add_new.png" />
-              </a>
             </div>
             <div class="widget-foot">
               <div class="clearfix"></div>
